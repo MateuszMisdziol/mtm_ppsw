@@ -20,7 +20,7 @@ void Delay(unsigned int uiTimer){
   unsigned int uiLoopCounter;
 
   for(; uiTimer>0; --uiTimer){
-    for(uiLoopCounter=0; uiLoopCounter<2418; ++uiLoopCounter){}
+    for(uiLoopCounter=0; uiLoopCounter<2418; uiLoopCounter++){}
   }
 }
 
