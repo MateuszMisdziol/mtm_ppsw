@@ -204,7 +204,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>233</TopLine>
+      <TopLine>234</TopLine>
       <CurrentLine>239</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\Startup.s</PathWithFileName>
@@ -220,8 +220,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>11</TopLine>
-      <CurrentLine>25</CurrentLine>
+      <TopLine>1</TopLine>
+      <CurrentLine>1</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
@@ -252,7 +252,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>7</TopLine>
+      <TopLine>8</TopLine>
       <CurrentLine>10</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\led.c</PathWithFileName>
@@ -266,9 +266,9 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>9</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>8</TopLine>
+      <TopLine>1</TopLine>
       <CurrentLine>36</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\timer.c</PathWithFileName>
