@@ -1,55 +1,58 @@
-
-#include <LPC21xx.H>
+#include "timer_interrupts.h"
+#include "timer.h"
 #include "led.h"
+#include "keyboard.h"
 
-// TIMER
-#define mCOUNTER_ENABLE 0x00000001
-#define mCOUNTER_RESET  0x00000002
+enum LedState {STATE_LEFT, STATE_RIGHT, STATE_STOP};
 
-// CompareMatch
-#define mINTERRUPT_ON_MR0 0x00000001
-#define mRESET_ON_MR0     0x00000002
-#define mMR0_INTERRUPT    0x00000001
+enum LedState eLedState = STATE_STOP;
 
-// VIC (Vector Interrupt Controller) VICIntEnable
-#define VIC_TIMER1_CHANNEL_NR 5
-
-// VICVectCntlx Vector Control Registers
-#define mIRQ_SLOT_ENABLE 0x00000020
-
-/**********************************************/
-//(Interrupt Service Routine) of Timer 0 interrupt
-__irq void Timer1IRQHandler(){
-
-	T1IR=mMR0_INTERRUPT; 	// skasowanie flagi przerwania 
-	LedStepRight();		// cos do roboty
-	VICVectAddr=0x00; 	// potwierdzenie wykonania procedury obslugi przerwania
+void Automat(void){
+  
+  switch(eLedState){
+    
+    case STATE_LEFT:
+      if(eKeyboardRead() == BUTTON_2){
+        eLedState = STATE_STOP;
+      }
+      else{
+        eLedState = STATE_LEFT;
+        Timer0Interrupts_Init(250000, &LedStepLeft); //LedStepLeft();
+      }
+      break;
+    case STATE_STOP:
+      if(eKeyboardRead() == BUTTON_1){
+        eLedState = STATE_LEFT;
+      }
+      else if(eKeyboardRead() == BUTTON_3){
+        eLedState = STATE_RIGHT;
+      }
+      else{
+        eLedState = STATE_STOP;
+      }
+      break;
+    case STATE_RIGHT:
+      if(eKeyboardRead() == BUTTON_2){
+        eLedState = STATE_STOP;
+      }
+      else{
+        eLedState = STATE_RIGHT;
+        Timer0Interrupts_Init(250000, &LedStepRight); //LedStepRight();
+      }
+      break;
+  }
 }
-/**********************************************/
-void Timer1Interrupts_Init(unsigned int uiPeriod){ // microseconds
 
-        // interrupts
-
-	VICIntEnable |= (0x1 << VIC_TIMER1_CHANNEL_NR);            // Enable Timer 0 interrupt channel 
-	VICVectCntl1  = mIRQ_SLOT_ENABLE | VIC_TIMER1_CHANNEL_NR;  // Enable Slot 0 and assign it to Timer 0 interrupt channel
-	VICVectAddr1  =(unsigned long)Timer1IRQHandler; 	   // Set to Slot 0 Address of Interrupt Service Routine 
-
-        // match module
-
-	T1MR0 = 15 * uiPeriod;                 	      // value 
-	T1MCR |= (mINTERRUPT_ON_MR0 | mRESET_ON_MR0); // action 
-
-        // timer
-
-	T1TCR |=  mCOUNTER_ENABLE; // start 
-
-}
-/**********************************************/
 int main (){
-	unsigned int iMainLoopCtr;
-	Timer1Interrupts_Init(1000);
+  //unsigned int iMainLoopCtr;
+  LedInit();
+  KeyboardInit();
+  InitTimer0Match0(100000);
+  //Timer0Interrupts_Init(500000, &Automat); //co 0.5 sekundy
 
-	while(1){
-	 	iMainLoopCtr++;
-	}
+  while(1){
+    Automat();
+    WaitOnTimerMatch0();
+    //iMainLoopCtr++;
+  }
 }
