@@ -13,7 +13,7 @@
 #define VIC_TIMER0_CHANNEL_NR 4
 
 // VICVectCntlx Vector Control Registers
-#define mIRQ_SLOT_ENABLE 0x00000010  //inaczej 1<<4 czyli timer 0
+#define mIRQ_SLOT_ENABLE 0x00000020  //wpisanie jedynki do bitu 5 sluzy do wlaczenia slotu IRQ
 
 //globalny wskaznik na funkcje 
 void(*ptrTimer0InterruptFunction)(void);

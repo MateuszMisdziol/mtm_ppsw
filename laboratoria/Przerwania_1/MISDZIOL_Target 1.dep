@@ -1,7 +1,6 @@
 Dependencies for Project 'MISDZIOL', Target 'Target 1': (DO NOT MODIFY !)
 F (.\Startup.s)(0x5CA484D2)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
-F (.\main.c)(0x5CBB66A7)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\main.o --omf_browse .\main.crf --depend .\main.d)
-I (D:\programy\Keil\ARM\Inc\Philips\LPC21xx.H)(0x51C81BAC)
+F (.\main.c)(0x5CBB6A1B)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\main.o --omf_browse .\main.crf --depend .\main.d)
 I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\laboratoria\Przerwania_1\timer_interrupts.h)(0x5CBB6014)
 I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\laboratoria\Przerwania_1\timer.h)(0x5CA46200)
 I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\laboratoria\Przerwania_1\led.h)(0x5CA484D2)

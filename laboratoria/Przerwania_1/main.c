@@ -17,7 +17,7 @@ void Automat(void){
       }
       else{
         eLedState = STATE_LEFT;
-        Timer0Interrupts_Init(250000, &LedStepLeft); //LedStepLeft();
+        LedStepLeft(); // Timer0Interrupts_Init(250000, &LedStepLeft);
       }
       break;
     case STATE_STOP:
@@ -37,22 +37,22 @@ void Automat(void){
       }
       else{
         eLedState = STATE_RIGHT;
-        Timer0Interrupts_Init(250000, &LedStepRight); //LedStepRight();
+        LedStepRight(); // Timer0Interrupts_Init(250000, &LedStepRight)
       }
       break;
   }
 }
 
 int main (){
-  //unsigned int iMainLoopCtr;
+  unsigned int iMainLoopCtr;
   LedInit();
   KeyboardInit();
-  InitTimer0Match0(100000);
-  //Timer0Interrupts_Init(500000, &Automat); //co 0.5 sekundy
+  //InitTimer0Match0(100000);
+  Timer0Interrupts_Init(500000, &Automat); //co 0.5 sekundy
 
   while(1){
-    Automat();
-    WaitOnTimerMatch0();
-    //iMainLoopCtr++;
+    //Automat();
+    //WaitOnTimerMatch0();
+    iMainLoopCtr++;
   }
 }
