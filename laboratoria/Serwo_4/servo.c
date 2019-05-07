@@ -5,13 +5,24 @@
 
 #define DETECTOR_bm (1<<10)
 
+enum DetectorState {ACTIVE, INACTIVE};
+enum ServoState {CALLIB, IDLE, IN_PROGRESS};
+
+struct Servo{
+  enum ServoState eState;
+  unsigned int uiCurrentPosition;
+  unsigned int uiDesiredPosition;
+};
+
 struct Servo sServo;
+
+//***********FUNKCJE***************
 
 void DetectorInit(void){
   IO0DIR = IO0DIR & (~DETECTOR_bm); //sprawdzic czy z OR | tez bedzie dzialac
 }
 
-enum DetectorState eReadDetector(){
+enum DetectorState eReadDetector(void){
   if((IO0PIN & DETECTOR_bm) == 1){
     return ACTIVE;
   }
@@ -44,7 +55,7 @@ void ServoAutomat(void){
       break;
     case IN_PROGRESS:
       if(sServo.uiCurrentPosition > sServo.uiDesiredPosition){
-        LedStepRight();
+        LedStepRight();  // tu moze ma byc left
         sServo.uiCurrentPosition--;
         sServo.eState = IN_PROGRESS;
       }
@@ -62,7 +73,7 @@ void ServoAutomat(void){
 
 void ServoInit(unsigned int uiServoFrequency){
   
-  uiServoFrequency = (1/uiServoFrequency) * 1000000;  // zamiana Hz na mikrosekundy
+  uiServoFrequency = ((1/uiServoFrequency) * 1000000);  // zamiana Hz na mikrosekundy
   sServo.eState = CALLIB;
   LedInit();
   DetectorInit();
@@ -71,8 +82,10 @@ void ServoInit(unsigned int uiServoFrequency){
 
 void ServoCallib(void){
   sServo.eState = CALLIB;
+  //while(eReadDetector()==INACTIVE); moze cos takiego ma byc
 }
 
 void ServoGoTo(unsigned int uiPosition){
   sServo.uiDesiredPosition = uiPosition;
+  //sServo.eState = IN_PROGRESS; tu moze to
 }

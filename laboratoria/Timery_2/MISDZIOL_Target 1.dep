@@ -10,7 +10,7 @@ I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\laboratoria\Timery_
 F (.\led.c)(0x5CA484D2)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\led.o --omf_browse .\led.crf --depend .\led.d)
 I (D:\programy\Keil\ARM\Inc\Philips\LPC21xx.H)(0x51C81BAC)
 I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\laboratoria\Timery_2\led.h)(0x5CA484D2)
-F (.\timer.c)(0x5CADB961)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\timer.o --omf_browse .\timer.crf --depend .\timer.d)
+F (.\timer.c)(0x5CADBA57)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\timer.o --omf_browse .\timer.crf --depend .\timer.d)
 I (D:\programy\Keil\ARM\Inc\Philips\LPC21xx.H)(0x51C81BAC)
 I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\laboratoria\Timery_2\timer.h)(0x5CA46200)
 F (.\timer.h)(0x5CA46200)()
