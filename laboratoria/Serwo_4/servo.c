@@ -23,7 +23,7 @@ void DetectorInit(void){
 }
 
 enum DetectorState eReadDetector(void){
-  if((IO0PIN & DETECTOR_bm) == 1){
+  if((IO0PIN & DETECTOR_bm) == 0){
     return ACTIVE;
   }
   else{
@@ -40,31 +40,32 @@ void ServoAutomat(void){
         LedStepLeft();
       }
       else{
+        //LedStepLeft(); sprawdzic
         sServo.uiCurrentPosition = 0;
         sServo.uiDesiredPosition = 0;
         sServo.eState = IDLE;
       }
       break;
     case IDLE:
-      if(sServo.uiCurrentPosition == sServo.uiDesiredPosition){
-        sServo.eState = IDLE;
+      if(sServo.uiDesiredPosition != sServo.uiCurrentPosition){
+        sServo.eState = IN_PROGRESS;
       }
       else{
-        sServo.eState = IN_PROGRESS;
+        sServo.eState = IDLE;
       }
       break;
     case IN_PROGRESS:
-      if(sServo.uiCurrentPosition > sServo.uiDesiredPosition){
+      if(sServo.uiDesiredPosition > sServo.uiCurrentPosition){
         LedStepRight();  // tu moze ma byc left
-        sServo.uiCurrentPosition--;
-        sServo.eState = IN_PROGRESS;
-      }
-      else if(sServo.uiCurrentPosition < sServo.uiDesiredPosition){
-        LedStepLeft();
         sServo.uiCurrentPosition++;
         sServo.eState = IN_PROGRESS;
       }
-      else if(sServo.uiCurrentPosition == sServo.uiDesiredPosition){
+      else if(sServo.uiDesiredPosition < sServo.uiCurrentPosition){
+        LedStepLeft();
+        sServo.uiCurrentPosition--;
+        sServo.eState = IN_PROGRESS;
+      }
+      else{
         sServo.eState = IDLE;
       }
       break;
@@ -82,10 +83,8 @@ void ServoInit(unsigned int uiServoFrequency){
 
 void ServoCallib(void){
   sServo.eState = CALLIB;
-  //while(eReadDetector()==INACTIVE); moze cos takiego ma byc
 }
 
 void ServoGoTo(unsigned int uiPosition){
   sServo.uiDesiredPosition = uiPosition;
-  //sServo.eState = IN_PROGRESS; tu moze to
 }
