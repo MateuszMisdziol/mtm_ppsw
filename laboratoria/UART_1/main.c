@@ -10,6 +10,8 @@ int main(){
   ServoInit(50);
   UART_InitWithInt(9600);
 
+  //siema
+
   while(1){
       
           /*CWICZENIE 2
