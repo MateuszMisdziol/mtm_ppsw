@@ -37,12 +37,12 @@ void LedOn(unsigned char ucLedIndeks){
 
 void LedStep(enum Direction eWhichDirection){
   
-  static unsigned int uiStepPosition;
+  static unsigned int uiStepPosition = 0;
 
-  if(eWhichDirection == LEFT){
+  if(eWhichDirection == RIGHT){
     uiStepPosition++;
   }
-  else if(eWhichDirection == RIGHT){
+  else if(eWhichDirection == LEFT){
     uiStepPosition--;
   }
   

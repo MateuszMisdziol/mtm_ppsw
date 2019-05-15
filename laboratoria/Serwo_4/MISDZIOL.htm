@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\MISDZIOL.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\MISDZIOL.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Mon May 13 23:16:52 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Wed May 15 22:17:22 2019
 <BR><P>
 <H3>Maximum Stack Usage =         24 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -183,19 +183,19 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
-<P><STRONG><a name="[b]"></a>main</STRONG> (ARM, 132 bytes, Stack size 0 bytes, main.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
+<P><STRONG><a name="[b]"></a>main</STRONG> (ARM, 148 bytes, Stack size 0 bytes, main.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16 + Unknown Stack Size
 <LI>Call Chain = main &rArr; ServoInit
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eKeyboardRead
+<BR>[Calls]<UL><LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eKeyboardRead
 <LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServoInit
-<LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServoGoTo
-<LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServoCallib
+<LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServoGoTo
+<LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServoCallib
 <LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KeyboardInit
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
 </UL>
-<P><STRONG><a name="[1d]"></a>eKeyboardRead</STRONG> (ARM, 104 bytes, Stack size 0 bytes, keyboard.o(.text))
+<P><STRONG><a name="[1e]"></a>eKeyboardRead</STRONG> (ARM, 104 bytes, Stack size 0 bytes, keyboard.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -203,7 +203,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[29]"></a>LedInit</STRONG> (ARM, 32 bytes, Stack size 0 bytes, led.o(.text))
+<P><STRONG><a name="[2a]"></a>LedInit</STRONG> (ARM, 32 bytes, Stack size 0 bytes, led.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServoInit
 </UL>
 
@@ -246,13 +246,13 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> timer_interrupts.o(.text)
 </UL>
-<P><STRONG><a name="[2b]"></a>Timer0Interrupts_Init</STRONG> (ARM, 92 bytes, Stack size 0 bytes, timer_interrupts.o(.text))
+<P><STRONG><a name="[29]"></a>Timer0Interrupts_Init</STRONG> (ARM, 92 bytes, Stack size 0 bytes, timer_interrupts.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServoInit
 </UL>
 
 <P><STRONG><a name="[54]"></a>Timer1Interrupts_Init</STRONG> (ARM, 92 bytes, Stack size 0 bytes, timer_interrupts.o(.text), UNUSED)
 
-<P><STRONG><a name="[2a]"></a>DetectorInit</STRONG> (ARM, 24 bytes, Stack size 0 bytes, servo.o(.text))
+<P><STRONG><a name="[2b]"></a>DetectorInit</STRONG> (ARM, 24 bytes, Stack size 0 bytes, servo.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServoInit
 </UL>
 
@@ -260,7 +260,16 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServoAutomat
 </UL>
 
-<P><STRONG><a name="[26]"></a>ServoAutomat</STRONG> (ARM, 316 bytes, Stack size 8 bytes, servo.o(.text))
+<P><STRONG><a name="[1f]"></a>ServoCallib</STRONG> (ARM, 36 bytes, Stack size 0 bytes, servo.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServoInit
+<LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[1d]"></a>ServoGoTo</STRONG> (ARM, 44 bytes, Stack size 0 bytes, servo.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[26]"></a>ServoAutomat</STRONG> (ARM, 304 bytes, Stack size 8 bytes, servo.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = ServoAutomat &rArr; LedStepRight &rArr; LedStep
 </UL>
 <BR>[Calls]<UL><LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eReadDetector
@@ -269,24 +278,17 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> servo.o(.text)
 </UL>
-<P><STRONG><a name="[1c]"></a>ServoInit</STRONG> (ARM, 68 bytes, Stack size 8 bytes, servo.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
+<P><STRONG><a name="[1c]"></a>ServoInit</STRONG> (ARM, 52 bytes, Stack size 16 bytes, servo.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16 + Unknown Stack Size
 <LI>Call Chain = ServoInit
 </UL>
 <BR>[Calls]<UL><LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
-<LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DetectorInit
-<LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer0Interrupts_Init
-<LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LedInit
+<LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DetectorInit
+<LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer0Interrupts_Init
+<LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LedInit
+<LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServoCallib
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[1e]"></a>ServoCallib</STRONG> (ARM, 16 bytes, Stack size 0 bytes, servo.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[1f]"></a>ServoGoTo</STRONG> (ARM, 12 bytes, Stack size 0 bytes, servo.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[55]"></a>__aeabi_idiv</STRONG> (ARM, 0 bytes, Stack size 8 bytes, aeabi_sdiv.o(.text), UNUSED)

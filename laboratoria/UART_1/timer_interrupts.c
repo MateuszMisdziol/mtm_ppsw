@@ -65,8 +65,8 @@ void Timer1Interrupts_Init(unsigned int uiPeriod, void (*ptrInterruptFunction)(v
         // interrupts
 
 	VICIntEnable |= (0x1 << VIC_TIMER1_CHANNEL_NR);
-	VICVectCntl5 = mIRQ_SLOT_ENABLE | VIC_TIMER1_CHANNEL_NR;
-	VICVectAddr5 = (unsigned long)Timer1IRQHandler;
+	VICVectCntl1 = mIRQ_SLOT_ENABLE | VIC_TIMER1_CHANNEL_NR;
+	VICVectAddr1 = (unsigned long)Timer1IRQHandler;
 
         // match module
 

@@ -19,16 +19,27 @@ struct Servo sServo;
 //***********FUNKCJE***************
 
 void DetectorInit(void){
-  IO0DIR = IO0DIR & (~DETECTOR_bm); //sprawdzic czy z OR | tez bedzie dzialac
+  IO0DIR = IO0DIR & (~DETECTOR_bm);
 }
 
 enum DetectorState eReadDetector(void){
   if((IO0PIN & DETECTOR_bm) == 0){
-    return INACTIVE;
-  }
-  else{
     return ACTIVE;
   }
+  else{
+    return INACTIVE;
+  }
+}
+
+void ServoCallib(void){
+  sServo.eState = CALLIB;
+  while(sServo.eState != IDLE){};
+}
+
+void ServoGoTo(unsigned int uiPosition){
+  sServo.uiDesiredPosition = uiPosition;
+  sServo.eState = IN_PROGRESS;
+  while(sServo.eState != IDLE){};
 }
 
 void ServoAutomat(void){
@@ -36,18 +47,16 @@ void ServoAutomat(void){
   switch(sServo.eState){
     case CALLIB:
       if(eReadDetector() == INACTIVE){
-        sServo.eState = CALLIB;
         LedStepLeft();
       }
       else{
-        //LedStepLeft(); sprawdzic
         sServo.uiCurrentPosition = 0;
         sServo.uiDesiredPosition = 0;
         sServo.eState = IDLE;
       }
       break;
     case IDLE:
-      if(sServo.uiDesiredPosition != sServo.uiCurrentPosition){
+      if(sServo.uiCurrentPosition != sServo.uiDesiredPosition){
         sServo.eState = IN_PROGRESS;
       }
       else{
@@ -55,12 +64,12 @@ void ServoAutomat(void){
       }
       break;
     case IN_PROGRESS:
-      if(sServo.uiDesiredPosition > sServo.uiCurrentPosition){
-        LedStepRight();  // tu moze ma byc left
+      if(sServo.uiCurrentPosition < sServo.uiDesiredPosition){
+        LedStepRight();
         sServo.uiCurrentPosition++;
         sServo.eState = IN_PROGRESS;
       }
-      else if(sServo.uiDesiredPosition < sServo.uiCurrentPosition){
+      else if(sServo.uiCurrentPosition > sServo.uiDesiredPosition){
         LedStepLeft();
         sServo.uiCurrentPosition--;
         sServo.eState = IN_PROGRESS;
@@ -74,17 +83,8 @@ void ServoAutomat(void){
 
 void ServoInit(unsigned int uiServoFrequency){
   
-  uiServoFrequency = ((1/uiServoFrequency) * 1000000);  // zamiana Hz na mikrosekundy
-  sServo.eState = CALLIB;
+  Timer0Interrupts_Init((1000000/uiServoFrequency), &ServoAutomat);  // zamiana Hz na mikrosekundy
   LedInit();
   DetectorInit();
-  Timer0Interrupts_Init(uiServoFrequency, &ServoAutomat);
-}
-
-void ServoCallib(void){
-  sServo.eState = CALLIB;
-}
-
-void ServoGoTo(unsigned int uiPosition){
-  sServo.uiDesiredPosition = uiPosition;
+  ServoCallib();
 }

@@ -4,8 +4,9 @@
 int main (){
   
   KeyboardInit();
-  ServoInit(100); // 100Hz  tutaj moze 500
-  //moze trzeba dodac Servo_Goto(100);
+  ServoInit(50);
+  ServoGoTo(15);
+  ServoGoTo(5);
 
   while(1){
     
@@ -14,13 +15,13 @@ int main (){
         ServoCallib();
         break;
       case BUTTON_2:
-        ServoGoTo(12);  // albo 50
+        ServoGoTo(15);
         break;
       case BUTTON_3:
-        ServoGoTo(24);  // 100
+        ServoGoTo(30);
         break;
       case BUTTON_4:
-        ServoGoTo(36);  // 150
+        ServoGoTo(50);
         break;
       default:
         break;

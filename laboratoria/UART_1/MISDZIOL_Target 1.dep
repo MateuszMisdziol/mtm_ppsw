@@ -1,31 +1,27 @@
 Dependencies for Project 'MISDZIOL', Target 'Target 1': (DO NOT MODIFY !)
 F (.\Startup.s)(0x5CC02054)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
-F (.\main.c)(0x5CD9D316)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\main.o --omf_browse .\main.crf --depend .\main.d)
+F (.\main.c)(0x5CDC739C)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\main.o --omf_browse .\main.crf --depend .\main.d)
 I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\laboratoria\UART_1\keyboard.h)(0x5CC02054)
-I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\laboratoria\UART_1\servo.h)(0x5CD2032D)
-I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\laboratoria\UART_1\uart.h)(0x5CD9B9BA)
-I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\laboratoria\UART_1\led.h)(0x5CC02054)
+I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\laboratoria\UART_1\servo.h)(0x5CDC72B8)
 F (.\keyboard.c)(0x5CC02054)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\keyboard.o --omf_browse .\keyboard.crf --depend .\keyboard.d)
 I (D:\programy\Keil\ARM\Inc\Philips\LPC21xx.H)(0x51C81BAC)
 I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\laboratoria\UART_1\keyboard.h)(0x5CC02054)
-F (.\led.c)(0x5CD9B7E2)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\led.o --omf_browse .\led.crf --depend .\led.d)
+F (.\led.c)(0x5CDC732C)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\led.o --omf_browse .\led.crf --depend .\led.d)
 I (D:\programy\Keil\ARM\Inc\Philips\LPC21xx.H)(0x51C81BAC)
 I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\laboratoria\UART_1\led.h)(0x5CC02054)
 F (.\timer.c)(0x5CC02054)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\timer.o --omf_browse .\timer.crf --depend .\timer.d)
 I (D:\programy\Keil\ARM\Inc\Philips\LPC21xx.H)(0x51C81BAC)
 I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\laboratoria\UART_1\timer.h)(0x5CC02054)
 F (.\timer.h)(0x5CC02054)()
-F (.\timer_interrupts.c)(0x5CD5B693)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\timer_interrupts.o --omf_browse .\timer_interrupts.crf --depend .\timer_interrupts.d)
+F (.\timer_interrupts.c)(0x5CC05067)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\timer_interrupts.o --omf_browse .\timer_interrupts.crf --depend .\timer_interrupts.d)
 I (D:\programy\Keil\ARM\Inc\Philips\LPC21xx.H)(0x51C81BAC)
 I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\laboratoria\UART_1\timer_interrupts.h)(0x5CC02054)
 F (.\timer_interrupts.h)(0x5CC02054)()
-F (.\servo.c)(0x5CD9DE58)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\servo.o --omf_browse .\servo.crf --depend .\servo.d)
+F (.\servo.c)(0x5CDC7281)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\servo.o --omf_browse .\servo.crf --depend .\servo.d)
 I (D:\programy\Keil\ARM\Inc\Philips\LPC21xx.H)(0x51C81BAC)
 I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\laboratoria\UART_1\timer_interrupts.h)(0x5CC02054)
 I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\laboratoria\UART_1\led.h)(0x5CC02054)
-I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\laboratoria\UART_1\servo.h)(0x5CD2032D)
-F (.\servo.h)(0x5CD2032D)()
-F (.\uart.c)(0x5CD9DE88)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\uart.o --omf_browse .\uart.crf --depend .\uart.d)
-I (D:\programy\Keil\ARM\Inc\Philips\LPC210X.H)(0x51C81BAC)
-I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\laboratoria\UART_1\uart.h)(0x5CD9B9BA)
-F (.\uart.h)(0x5CD9B9BA)()
+I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\laboratoria\UART_1\servo.h)(0x5CDC72B8)
+F (.\servo.h)(0x5CDC72B8)()
+F (.\uart.c)(0x5CDC7434)()
+F (.\uart.h)(0x5CDC743C)()
