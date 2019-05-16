@@ -1,5 +1,6 @@
 #include <LPC210X.H>
 #include "uart.h"
+#include "string.h"
 
 /************ UART ************/
 // U0LCR Line Control Register
@@ -28,10 +29,9 @@
 
 //DYREKTYWY
 #define RECIVER_SIZE 10
+#define TERMINATOR ';'
 
 ////////////// STRUKTURY /////////////////////
-
-enum eReciverStatus {EMPTY, READY, OVERFLOW};
 
 struct ReciverBuffer{
   char cData[RECIVER_SIZE];
