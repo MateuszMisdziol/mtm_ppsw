@@ -1,5 +1,5 @@
 enum eReciverStatus {EMPTY, READY, OVERFLOW};
-struct ReciverBuffer sReciverBuffer;
+//struct ReciverBuffer sReciverBuffer;
 
 __irq void UART0_Interrupt (void);
 void UART_InitWithInt(unsigned int uiBaudRate);
