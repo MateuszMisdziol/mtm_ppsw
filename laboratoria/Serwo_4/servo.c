@@ -5,15 +5,6 @@
 
 #define DETECTOR_bm (1<<10)
 
-enum DetectorState {ACTIVE, INACTIVE};
-enum ServoState {CALLIB, IDLE, IN_PROGRESS};
-
-struct Servo{
-  enum ServoState eState;
-  unsigned int uiCurrentPosition;
-  unsigned int uiDesiredPosition;
-};
-
 struct Servo sServo;
 
 //***********FUNKCJE***************
@@ -33,13 +24,13 @@ enum DetectorState eReadDetector(void){
 
 void ServoCallib(void){
   sServo.eState = CALLIB;
-  while(sServo.eState != IDLE){};
+  //while(sServo.eState != IDLE){};
 }
 
 void ServoGoTo(unsigned int uiPosition){
   sServo.uiDesiredPosition = uiPosition;
-  sServo.eState = IN_PROGRESS;
-  while(sServo.eState != IDLE){};
+  //sServo.eState = IN_PROGRESS;
+  //while(sServo.eState != IDLE){};
 }
 
 void ServoAutomat(void){

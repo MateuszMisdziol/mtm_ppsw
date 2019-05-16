@@ -5,8 +5,8 @@ int main (){
   
   KeyboardInit();
   ServoInit(50);
-  ServoGoTo(15);
-  ServoGoTo(5);
+  //ServoGoTo(15);
+  //ServoGoTo(5);
 
   while(1){
     
