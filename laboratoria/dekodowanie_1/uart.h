@@ -1,3 +1,6 @@
+#define RECIVER_SIZE 10
+#define TERMINATOR '\r'
+
 enum eReciverStatus {EMPTY, READY, OVERFLOW};
 
 __irq void UART0_Interrupt (void);

@@ -27,10 +27,6 @@
 // USTAWIENIE PINU DLA UARTA
 #define P01_RXD_UART0_PIN                          0x00000004    //(1<<2)
 
-//DYREKTYWY
-#define RECIVER_SIZE 10
-#define TERMINATOR ';'
-
 ////////////// STRUKTURY /////////////////////
 
 struct ReciverBuffer{
@@ -79,7 +75,7 @@ __irq void UART0_Interrupt (void){
 
    if      ((uiCopyOfU0IIR & mINTERRUPT_PENDING_IDETIFICATION_BITFIELD) == mRX_DATA_AVALIABLE_INTERRUPT_PENDING) // odebrano znak
    {
-      cOdebranyZnak = U0RBR;
+     cOdebranyZnak = U0RBR;
      Reciever_PutCharacterToBuffer(cOdebranyZnak);
    } 
    
