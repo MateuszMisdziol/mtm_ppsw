@@ -1,3 +1,5 @@
+#define TERMINATOR '\r'
+
 ///////////OPERACJE_PROSTE/////////////
 
 enum CompResult {DIFFERENT, EQUAL};
@@ -8,8 +10,6 @@ void AppendString(char pcSourceStr[], char pcDestinationStr[]);
 void ReplaceCharactersInString(char pcString[], char cOldChar, char cNewChar);
 
 ///////////KONWERSJE/////////////
-
-#define HEX_bm 0x000F
 
 enum Result {OK, ERROR};
 

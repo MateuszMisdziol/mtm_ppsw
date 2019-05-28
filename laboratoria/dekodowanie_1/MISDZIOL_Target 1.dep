@@ -1,11 +1,11 @@
 Dependencies for Project 'MISDZIOL', Target 'Target 1': (DO NOT MODIFY !)
 F (.\Startup.s)(0x5CDDA90E)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
-F (.\main.c)(0x5CE46B50)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\main.o --omf_browse .\main.crf --depend .\main.d)
+F (.\main.c)(0x5CE69D7C)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\main.o --omf_browse .\main.crf --depend .\main.d)
 I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\dekodowanie_1\keyboard.h)(0x5CDDA90E)
 I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\dekodowanie_1\servo.h)(0x5CDDA90E)
-I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\dekodowanie_1\uart.h)(0x5CDDA90E)
-I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\dekodowanie_1\string.h)(0x5CE464FD)
-I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\dekodowanie_1\command_decoder.h)(0x5CE46851)
+I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\dekodowanie_1\uart.h)(0x5CE587B5)
+I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\dekodowanie_1\string.h)(0x5CE5877D)
+I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\dekodowanie_1\command_decoder.h)(0x5CE5866F)
 F (.\keyboard.c)(0x5CDDA90E)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\keyboard.o --omf_browse .\keyboard.crf --depend .\keyboard.d)
 I (D:\programy\Keil\ARM\Inc\Philips\LPC21xx.H)(0x51C81BAC)
 I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\dekodowanie_1\keyboard.h)(0x5CDDA90E)
@@ -26,13 +26,13 @@ I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratori
 I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\dekodowanie_1\led.h)(0x5CDDA90E)
 I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\dekodowanie_1\servo.h)(0x5CDDA90E)
 F (.\servo.h)(0x5CDDA90E)()
-F (.\uart.c)(0x5CDEB54A)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\uart.o --omf_browse .\uart.crf --depend .\uart.d)
+F (.\uart.c)(0x5CE47676)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\uart.o --omf_browse .\uart.crf --depend .\uart.d)
 I (D:\programy\Keil\ARM\Inc\Philips\LPC210X.H)(0x51C81BAC)
-I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\dekodowanie_1\uart.h)(0x5CDDA90E)
-I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\dekodowanie_1\string.h)(0x5CE464FD)
-F (.\uart.h)(0x5CDDA90E)()
-F (.\string.c)(0x5CE466D8)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\string.o --omf_browse .\string.crf --depend .\string.d)
-I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\dekodowanie_1\string.h)(0x5CE464FD)
-F (.\command_decoder.c)(0x5CE46851)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\command_decoder.o --omf_browse .\command_decoder.crf --depend .\command_decoder.d)
-I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\dekodowanie_1\command_decoder.h)(0x5CE46851)
-I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\dekodowanie_1\string.h)(0x5CE464FD)
+I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\dekodowanie_1\uart.h)(0x5CE587B5)
+I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\dekodowanie_1\string.h)(0x5CE5877D)
+F (.\uart.h)(0x5CE587B5)()
+F (.\string.c)(0x5CE587AC)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\string.o --omf_browse .\string.crf --depend .\string.d)
+I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\dekodowanie_1\string.h)(0x5CE5877D)
+F (.\command_decoder.c)(0x5CE5866F)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\command_decoder.o --omf_browse .\command_decoder.crf --depend .\command_decoder.d)
+I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\dekodowanie_1\string.h)(0x5CE5877D)
+I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\dekodowanie_1\command_decoder.h)(0x5CE5866F)

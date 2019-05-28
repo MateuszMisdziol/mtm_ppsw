@@ -8,18 +8,14 @@
 int main(){
   
   char cReceivedString[RECIVER_SIZE];
-  //char tab_pom[10];
-	
-	//char cStringCallib[] = "callib";
-	//char cStringLeft[] = "left";
-	//char cStringRight[] = "right";
-	
+  //unsigned char uiServoPosition;
+  
   KeyboardInit();
-  //ServoInit(50);
+  ServoInit(50);
   UART_InitWithInt(9600);
 
   while(1){
-      
+
     //ZADANIE 3
     if(eReciever_GetStatus() == READY){
       Reciever_GetStringCopy(cReceivedString);
@@ -31,27 +27,15 @@ int main(){
             ServoCallib();
           break;
           case GOTO:
-            ServoGoTo(asToken[1].uValue.uiNumber);
+            if(asToken[1].eType == NUMBER){
+            ServoGoTo(asToken[1].uValue.uiNumber); //uiServoPosition +
+            //uiPreviusPos = uiPreviusPos + asToken[1].uValue.uiNumber; //zobaczyc czy potrzebne raczej nie bo to do czegos innego bylo
+            }
           break;
         }
       }
     }
     
-    
-    
-    /* ZADANIE 2
-    if(eReciever_GetStatus() == READY){
-      Reciever_GetStringCopy(tab_pom);
-    }
-		
-		if(eCompareString(tab_pom, cStringCallib) == EQUAL){
-			ServoCallib();
-		}
-		else if(eCompareString(tab_pom, cStringLeft) == EQUAL){
-			ServoGoTo(50);
-		}
-		else if(eCompareString(tab_pom, cStringRight) == EQUAL){
-			ServoGoTo(150);
-    }*/
+
   }
 }
