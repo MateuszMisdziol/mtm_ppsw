@@ -83,7 +83,7 @@ void ServoAutomat(void){
 
 void ServoInit(unsigned int uiServoFrequency){
   
-  Timer0Interrupts_Init((1000000/uiServoFrequency), &ServoAutomat);  // zamiana Hz na mikrosekundy
+  Timer1Interrupts_Init((1000000/uiServoFrequency), &ServoAutomat);  // zamiana Hz na mikrosekundy
   LedInit();
   DetectorInit();
   ServoCallib();

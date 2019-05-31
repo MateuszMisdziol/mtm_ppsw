@@ -39,6 +39,8 @@ __irq void Timer1IRQHandler(void){
 
 /**********************************************/
 void Timer0Interrupts_Init(unsigned int uiPeriod, void (*ptrInterruptFunction)(void)){ // microseconds
+	
+	ptrTimer0InterruptFunction = ptrInterruptFunction;
 
         // interrupts
 
@@ -57,16 +59,18 @@ void Timer0Interrupts_Init(unsigned int uiPeriod, void (*ptrInterruptFunction)(v
   
         //zadanie 3 
   
-  ptrTimer0InterruptFunction = ptrInterruptFunction;
+  
 }
 
 void Timer1Interrupts_Init(unsigned int uiPeriod, void (*ptrInterruptFunction)(void)){ // microseconds
+	
+	ptrTimer1InterruptFunction = ptrInterruptFunction;
 
         // interrupts
 
 	VICIntEnable |= (0x1 << VIC_TIMER1_CHANNEL_NR);
-	VICVectCntl1 = mIRQ_SLOT_ENABLE | VIC_TIMER1_CHANNEL_NR;
-	VICVectAddr1 = (unsigned long)Timer1IRQHandler;
+	VICVectCntl12 = mIRQ_SLOT_ENABLE | VIC_TIMER1_CHANNEL_NR;
+	VICVectAddr12 = (unsigned long)Timer1IRQHandler;
 
         // match module
 
@@ -79,5 +83,5 @@ void Timer1Interrupts_Init(unsigned int uiPeriod, void (*ptrInterruptFunction)(v
   
         //zadanie 3 
   
-  ptrTimer1InterruptFunction = ptrInterruptFunction;
+  
 }
