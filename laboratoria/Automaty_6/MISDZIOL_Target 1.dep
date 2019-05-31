@@ -1,11 +1,11 @@
 Dependencies for Project 'MISDZIOL', Target 'Target 1': (DO NOT MODIFY !)
-F (.\Startup.s)(0x5C9BA758)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
-F (.\main.c)(0x5C9BA758)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\main.o --omf_browse .\main.crf --depend .\main.d)
-I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\mtm_ppsw\Automaty_6\led.h)(0x5C9BA758)
-I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\mtm_ppsw\Automaty_6\keyboard.h)(0x5C9BA758)
-F (.\keyboard.c)(0x5C9BA758)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\keyboard.o --omf_browse .\keyboard.crf --depend .\keyboard.d)
-I (C:\Keil\ARM\Inc\Philips\LPC21xx.H)(0x00000000)
-I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\mtm_ppsw\Automaty_6\keyboard.h)(0x5C9BA758)
-F (.\led.c)(0x5C9BA758)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\led.o --omf_browse .\led.crf --depend .\led.d)
-I (C:\Keil\ARM\Inc\Philips\LPC21xx.H)(0x00000000)
-I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\mtm_ppsw\Automaty_6\led.h)(0x5C9BA758)
+F (.\Startup.s)(0x5CF11B2B)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
+F (.\main.c)(0x5CF11B2B)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\main.o --omf_browse .\main.crf --depend .\main.d)
+I (C:\Users\student\Desktop\MateuszMisdziol\ppsw_lab\laboratoria\Automaty_6\led.h)(0x5CF11B2B)
+I (C:\Users\student\Desktop\MateuszMisdziol\ppsw_lab\laboratoria\Automaty_6\keyboard.h)(0x5CF11B2B)
+F (.\keyboard.c)(0x5CF11B2B)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\keyboard.o --omf_browse .\keyboard.crf --depend .\keyboard.d)
+I (D:\programy\Keil\ARM\Inc\Philips\LPC21xx.H)(0x00000000)
+I (C:\Users\student\Desktop\MateuszMisdziol\ppsw_lab\laboratoria\Automaty_6\keyboard.h)(0x5CF11B2B)
+F (.\led.c)(0x5CF11B2B)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\led.o --omf_browse .\led.crf --depend .\led.d)
+I (D:\programy\Keil\ARM\Inc\Philips\LPC21xx.H)(0x00000000)
+I (C:\Users\student\Desktop\MateuszMisdziol\ppsw_lab\laboratoria\Automaty_6\led.h)(0x5CF11B2B)
