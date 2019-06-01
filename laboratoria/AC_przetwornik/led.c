@@ -40,10 +40,10 @@ void LedStep(enum Direction eWhichDirection){
   static unsigned int uiStepPosition = 0;
 
   if(eWhichDirection == RIGHT){
-    uiStepPosition++;
+    uiStepPosition--;
   }
   else if(eWhichDirection == LEFT){
-    uiStepPosition--;
+    uiStepPosition++;
   }
   
   LedOn(uiStepPosition%4);

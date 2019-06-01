@@ -5,7 +5,6 @@
 
 #define DETECTOR_bm (1<<10)
 
-enum DetectorState {ACTIVE, INACTIVE};
 enum ServoState {CALLIB, IDLE, IN_PROGRESS};
 
 struct Servo{
@@ -64,14 +63,14 @@ void ServoAutomat(void){
       }
       break;
     case IN_PROGRESS:
-      if(sServo.uiCurrentPosition < sServo.uiDesiredPosition){
-        LedStepRight();
-        sServo.uiCurrentPosition++;
-        sServo.eState = IN_PROGRESS;
-      }
-      else if(sServo.uiCurrentPosition > sServo.uiDesiredPosition){
+      if(sServo.uiCurrentPosition > sServo.uiDesiredPosition){
         LedStepLeft();
         sServo.uiCurrentPosition--;
+        sServo.eState = IN_PROGRESS;
+      }
+      else if(sServo.uiCurrentPosition < sServo.uiDesiredPosition){
+        LedStepRight();
+        sServo.uiCurrentPosition++;
         sServo.eState = IN_PROGRESS;
       }
       else{
