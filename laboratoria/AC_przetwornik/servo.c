@@ -64,12 +64,12 @@ void ServoAutomat(void){
       break;
     case IN_PROGRESS:
       if(sServo.uiCurrentPosition > sServo.uiDesiredPosition){
-        LedStepLeft();
+        LedStepRight();
         sServo.uiCurrentPosition--;
         sServo.eState = IN_PROGRESS;
       }
       else if(sServo.uiCurrentPosition < sServo.uiDesiredPosition){
-        LedStepRight();
+        LedStepLeft();
         sServo.uiCurrentPosition++;
         sServo.eState = IN_PROGRESS;
       }

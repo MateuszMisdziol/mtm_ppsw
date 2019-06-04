@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\MISDZIOL.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\MISDZIOL.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Sat Jun 01 20:25:41 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Wed Jun 05 00:00:50 2019
 <BR><P>
 <H3>Maximum Stack Usage =        104 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -189,9 +189,9 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[1b]"></a>ADReturn</STRONG> (ARM, 56 bytes, Stack size 16 bytes, main.o(.text))
+<P><STRONG><a name="[1b]"></a>uiADReturn</STRONG> (ARM, 56 bytes, Stack size 16 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16 + Unknown Stack Size
-<LI>Call Chain = ADReturn
+<LI>Call Chain = uiADReturn
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
 </UL>
@@ -218,7 +218,7 @@ Global Symbols
 <LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CopyString
 <LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AppendUIntToString
 <LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AppendString
-<LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADReturn
+<LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uiADReturn
 <LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD_Init
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
@@ -495,7 +495,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[20]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_InitWithInt
 <LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServoInit
-<LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADReturn
+<LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uiADReturn
 </UL>
 
 <P><STRONG><a name="[73]"></a>__semihosting_library_function</STRONG> (ARM, 0 bytes, Stack size 0 bytes, indicate_semi.o(.text), UNUSED)

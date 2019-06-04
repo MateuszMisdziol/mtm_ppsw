@@ -15,7 +15,9 @@
 #define START_AD_CONVERSION (1<<24) // start przetwornika AD
 // AD DATA REGISTER
 #define AD_DONE_REGISTER (1<<31)    // konwersja gotowa
-#define AD_DATA_MASK 0x0000FFC0
+#define AD_DATA_MASK 0x0000FFC0     // maska aby odczytac dane z rejestru
+
+#define DIVIDER 21                  // dzielnik aby pot. robil 1 obrot
 
 void AD_Init(void){
   
@@ -23,15 +25,15 @@ void AD_Init(void){
   ADCR = CHANNEL_AIN0 | AD_ENABLE; //0x1200E01
 }
 
-int ADReturn(unsigned int x){
+unsigned int uiADReturn(unsigned int uiServoPosition){ //unsigned int x
 
-  unsigned long int uiADConverterData;
+  unsigned int uiADConverterData;
 
   uiADConverterData = (ADDR & AD_DATA_MASK);
-  uiADConverterData = (uiADConverterData>>6);
-  uiADConverterData = (uiADConverterData / 21);
+  uiADConverterData = (uiADConverterData>>6); // przesuniecie bitowe, zeby operowac na mniejszych liczbach
+  uiADConverterData = (uiADConverterData / DIVIDER); // 1023 (max pierwszych 9 bitow) / 48 (obrot 360 st.)
   
-  return (uiADConverterData + x);
+  return (uiADConverterData + uiServoPosition);
 }
 
 struct Watch sWatch;
@@ -68,8 +70,8 @@ int main(void){
   
 
   while(1){
-    
-    ///////////////// ADC ///////////////////
+
+    /////////// ADC /////////////////////////
     
     ADCR |= START_AD_CONVERSION;
    
@@ -106,7 +108,7 @@ int main(void){
 		}
     else if((ADDR & AD_DONE_REGISTER) == AD_DONE_REGISTER){
       
-      ServoGoTo(ADReturn(asToken[1].uValue.uiNumber));
+      ServoGoTo(uiADReturn(asToken[1].uValue.uiNumber));
     }
     
     /////////// UART WYSYLANIE //////////////

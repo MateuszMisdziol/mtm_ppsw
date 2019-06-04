@@ -1,9 +1,9 @@
 Dependencies for Project 'MISDZIOL', Target 'Target 1': (DO NOT MODIFY !)
 F (.\Startup.s)(0x5CF1A49F)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
-F (.\main.c)(0x5CF28CF1)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\main.o --omf_browse .\main.crf --depend .\main.d)
+F (.\main.c)(0x5CF2C22A)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\main.o --omf_browse .\main.crf --depend .\main.d)
 I (D:\programy\Keil\ARM\Inc\Philips\LPC21xx.H)(0x51C81BAC)
 I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\AC_przetwornik\keyboard.h)(0x5CF1A49F)
-I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\AC_przetwornik\servo.h)(0x5CF1A49F)
+I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\AC_przetwornik\servo.h)(0x5CF2C051)
 I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\AC_przetwornik\uart.h)(0x5CF1A49F)
 I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\AC_przetwornik\string.h)(0x5CF1A49F)
 I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\AC_przetwornik\command_decoder.h)(0x5CF1A49F)
@@ -11,7 +11,7 @@ I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratori
 F (.\keyboard.c)(0x5CF1A49F)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\keyboard.o --omf_browse .\keyboard.crf --depend .\keyboard.d)
 I (D:\programy\Keil\ARM\Inc\Philips\LPC21xx.H)(0x51C81BAC)
 I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\AC_przetwornik\keyboard.h)(0x5CF1A49F)
-F (.\led.c)(0x5CF1A49F)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\led.o --omf_browse .\led.crf --depend .\led.d)
+F (.\led.c)(0x5CF2B604)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\led.o --omf_browse .\led.crf --depend .\led.d)
 I (D:\programy\Keil\ARM\Inc\Philips\LPC21xx.H)(0x51C81BAC)
 I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\AC_przetwornik\led.h)(0x5CF1A49F)
 F (.\timer.c)(0x5CF1A49F)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\timer.o --omf_browse .\timer.crf --depend .\timer.d)
@@ -22,12 +22,12 @@ F (.\timer_interrupts.c)(0x5CF1A49F)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=in
 I (D:\programy\Keil\ARM\Inc\Philips\LPC21xx.H)(0x51C81BAC)
 I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\AC_przetwornik\timer_interrupts.h)(0x5CF1A49F)
 F (.\timer_interrupts.h)(0x5CF1A49F)()
-F (.\servo.c)(0x5CF1A49F)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\servo.o --omf_browse .\servo.crf --depend .\servo.d)
+F (.\servo.c)(0x5CF2C022)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\servo.o --omf_browse .\servo.crf --depend .\servo.d)
 I (D:\programy\Keil\ARM\Inc\Philips\LPC21xx.H)(0x51C81BAC)
 I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\AC_przetwornik\timer_interrupts.h)(0x5CF1A49F)
 I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\AC_przetwornik\led.h)(0x5CF1A49F)
-I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\AC_przetwornik\servo.h)(0x5CF1A49F)
-F (.\servo.h)(0x5CF1A49F)()
+I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\AC_przetwornik\servo.h)(0x5CF2C051)
+F (.\servo.h)(0x5CF2C051)()
 F (.\uart.c)(0x5CF1A49F)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I D:\programy\Keil\ARM\RV31\INC-I D:\programy\Keil\ARM\CMSIS\Include-I D:\programy\Keil\ARM\Inc\Philips-o .\uart.o --omf_browse .\uart.crf --depend .\uart.d)
 I (D:\programy\Keil\ARM\Inc\Philips\LPC210X.H)(0x51C81BAC)
 I (D:\STUDIA\Podstawy programowania systemow wbudowanych\GIT\ppsw_lab\laboratoria\AC_przetwornik\string.h)(0x5CF1A49F)
