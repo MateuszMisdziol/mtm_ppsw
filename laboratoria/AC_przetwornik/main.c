@@ -1,40 +1,12 @@
-#include <LPC21xx.H>
 #include "keyboard.h"
 #include "servo.h"
 #include "uart.h"
 #include "string.h"
 #include "command_decoder.h"
 #include "timer_interrupts.h"
+#include "adc.h"
+#include <LPC21xx.H>
 
-//////////////// ADC ///////////////////
-
-#define P027_AIN1_ADC_PIN (1<<22)   // ustawienie pinu
-// AD CONTROL REGISTER
-#define CHANNEL_AIN0 (1<<0)         // kanal pierwszy
-#define AD_ENABLE (1<<21)           // wlaczenie przetwornika ad
-#define START_AD_CONVERSION (1<<24) // start przetwornika AD
-// AD DATA REGISTER
-#define AD_DONE_REGISTER (1<<31)    // konwersja gotowa
-#define AD_DATA_MASK 0x0000FFC0     // maska aby odczytac dane z rejestru
-
-#define DIVIDER 21                  // dzielnik aby pot. robil 1 obrot
-
-void AD_Init(void){
-  
-  PINSEL1 = PINSEL1 | P027_AIN1_ADC_PIN;
-  ADCR = CHANNEL_AIN0 | AD_ENABLE; //0x1200E01
-}
-
-unsigned int uiADReturn(unsigned int uiServoPosition){ //unsigned int x
-
-  unsigned int uiADConverterData;
-
-  uiADConverterData = (ADDR & AD_DATA_MASK);
-  uiADConverterData = (uiADConverterData>>6); // przesuniecie bitowe, zeby operowac na mniejszych liczbach
-  uiADConverterData = (uiADConverterData / DIVIDER); // 1023 (max pierwszych 9 bitow) / 48 (obrot 360 st.)
-  
-  return (uiADConverterData + uiServoPosition);
-}
 
 struct Watch sWatch;
 
@@ -62,6 +34,12 @@ int main(void){
   unsigned char fCalcToken;
 	unsigned char fIDToken;
 	unsigned char fUnKnownCommand;
+	unsigned char fADConverter;
+	unsigned char fServoChange;
+	//unsigned char fDoneServo;
+	unsigned int uiServoPreviusPosition;
+	unsigned int uiADC;
+	unsigned int uiCurrentServo;
   
   ServoInit(200);
   Timer0Interrupts_Init(1000000, &WatchUpdate);
@@ -70,10 +48,6 @@ int main(void){
   
 
   while(1){
-
-    /////////// ADC /////////////////////////
-    
-    ADCR |= START_AD_CONVERSION;
    
     /////////// UART ODBIORNIK //////////////
     
@@ -88,6 +62,7 @@ int main(void){
 						fCalcToken = 1;
 					break;
 					case GOTO:
+						//fDoneServo = 1;
 						ServoGoTo(asToken[1].uValue.uiNumber);
 					break;
 					case CALLIB:
@@ -106,10 +81,22 @@ int main(void){
 				fUnKnownCommand = 1;
 			}
 		}
-    else if((ADDR & AD_DONE_REGISTER) == AD_DONE_REGISTER){
-      
-      ServoGoTo(uiADReturn(asToken[1].uValue.uiNumber));
-    }
+		
+		///////////////////// ADC ////////////////////////
+    
+    ADCR |= START_AD_CONVERSION; // sprawdzic!
+		
+    if(uiCompleteAD() == 1){
+				
+			uiADC = uiReadADC();
+			uiCurrentServo = (uiADC / DIVIDER);
+				
+			if(uiServoPreviusPosition != uiCurrentServo){
+				fADConverter = 1;
+				uiServoPreviusPosition = uiCurrentServo;
+				ServoGoTo(uiServoPreviusPosition);
+			}		
+		}
     
     /////////// UART WYSYLANIE //////////////
     
@@ -145,6 +132,13 @@ int main(void){
 			else if(fUnKnownCommand == 1){
         fUnKnownCommand = 0;
         CopyString("unknown_command\n", cTransmiterString);
+        Transmiter_SendString(cTransmiterString);
+      }
+			else if(fADConverter == 1){
+        fADConverter = 0;
+        CopyString("Servo_Position ", cTransmiterString);
+				AppendUIntToString(uiServoPreviusPosition, cTransmiterString);
+				AppendString("\n", cTransmiterString);
         Transmiter_SendString(cTransmiterString);
       }
     }
